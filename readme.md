@@ -116,6 +116,18 @@ Finding similarity between documents
 | Refill           | POST          | /refill      | Increase the token        | username:string, admin_pw:string, refill_amount:int| 200 OK, 301 out of token, 304 invalid admin login |
 
 
+# Image Recognition API
+Classify objects given the image
+
+## Resource Method Chart
+
+| Resource         | Method        | Path         | Used for                  | Param                                              | Status on Error                             | 
+| ----------------:|:-------------:| ------------:| -------------------------:| --------------------------------------------------:| -------------------------------------------:|
+| Register User    | POST          | /register    | Registering a user        | username:string, password:string                   | 200 OK, 301 Missing username/pass           |
+| Classify| POST          | /classify      | Classify the objects    | username:string, password:string, url:string  | 200 OK, 301 out of token, 302 invalid login, 303 out of token    |
+| Refill           | POST          | /refill      | Increase the token        | username:string, admin_pw:string, refill_amount:int| 200 OK, 301 out of token, 304 invalid admin login |
+
+
 
 
 # Docker Commands
