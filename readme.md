@@ -83,3 +83,20 @@ MongoDB is a cross-platform, document oriented database that provides, high pefo
 * Optimize your schema for most frequent use cases.
 * Do complex aggregation in the schema.
 
+
+
+# Database as a service
+
+### TASKS: 
+- Registration of a user with 0 tokens
+- Each user gets 10 tokens
+- Store a sentence on the DB for 1 token
+- Retrieve his stored sentence on the database for 1 token
+
+## Resource Method Chart
+
+| Resource         | Method        | Path     | Used for              | Param                                              | Status on Error                             | 
+| ----------------:|:-------------:| --------:| ---------------------:| --------------------------------------------------:| -------------------------------------------:|
+| Register User    | POST          | /register| Registering a user    | username:string, password:string                   | 200 OK, 301 Missing username/pass           |
+| Store Sentence   | POST          | /store   | Storing a sentence    | username:string, password:string, sentence:string  | 200 OK, 301 out of token, 302 invalid login |
+| Retrieve Sentence| POST           | /get     | Retrieve a sentence   | username:string, password                          | 200 OK, 301 out of token, 302 invalid login |
