@@ -100,3 +100,32 @@ MongoDB is a cross-platform, document oriented database that provides, high pefo
 | Register User    | POST          | /register| Registering a user    | username:string, password:string                   | 200 OK, 301 Missing username/pass           |
 | Store Sentence   | POST          | /store   | Storing a sentence    | username:string, password:string, sentence:string  | 200 OK, 301 out of token, 302 invalid login |
 | Retrieve Sentence| POST           | /get     | Retrieve a sentence   | username:string, password                          | 200 OK, 301 out of token, 302 invalid login |
+
+
+
+
+# Similarity Check API
+Finding similarity between documents
+
+## Resource Method Chart
+
+| Resource         | Method        | Path         | Used for                  | Param                                              | Status on Error                             | 
+| ----------------:|:-------------:| ------------:| -------------------------:| --------------------------------------------------:| -------------------------------------------:|
+| Register User    | POST          | /register    | Registering a user        | username:string, password:string                   | 200 OK, 301 Missing username/pass           |
+| Detect Similarity| POST          | /detect      | Find similarity of docs   | username:string, password:string, text1:string, text2:string  | 200 OK, 301 out of token, 302 invalid login, 303 out of token    |
+| Refill           | POST          | /refill      | Increase the token        | username:string, admin_pw:string, refill_amount:int| 200 OK, 301 out of token, 304 invalid admin login |
+
+
+
+
+# Docker Commands
+To run the Docker apps:
+
+  ```
+   cd ./web/
+   docker-compose build
+   docker-compose up
+   
+  ```
+ 
+
